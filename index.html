@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f7f5">
+  <meta name="description" content="Praktyczny przewodnik i planer, który pomaga uporządkować przygotowania do matury: diagnoza, priorytety, realny plan nauki i analiza błędów.">
+  <title>Matura bez stresu — uporządkuj przygotowania do matury</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root{--paper:#f7f7f5;--ink:#171717;--muted:#777772;--line:#deded9;--dark:#191919;--soft:#ecece8}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:"DM Sans",sans-serif;-webkit-font-smoothing:antialiased}
+    h1,h2,h3,.display{font-family:"Manrope",sans-serif;letter-spacing:-.045em}
+    a{color:inherit}
+    .wrap{width:min(1180px,calc(100% - 48px));margin-inline:auto}
+    .eyebrow{font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:#777}
+    .nav-link{font-size:12px;color:#5f5f5a;transition:color .2s}
+    .nav-link:hover{color:#000}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:14px 20px;background:#171717;color:white;font-size:12px;font-weight:700;letter-spacing:.01em;transition:transform .25s,background .25s}
+    .btn:hover{background:#3b3b39;transform:translateY(-2px)}
+    .btn-outline{background:transparent;color:#171717;border:1px solid #aaa}
+    .btn-outline:hover{background:#171717;color:#fff}
+    .hero-panel{background:#1c1c1c;min-height:430px;position:relative;overflow:hidden}
+    .hero-panel:before{content:"";position:absolute;width:360px;height:360px;border:1px solid #4a4a4a;border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%)}
+    .hero-panel:after{content:"";position:absolute;width:270px;height:270px;border:1px solid #393939;border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%)}
+    .book-scene{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;min-height:430px;perspective:1100px}
+    .book{position:relative;width:220px;height:300px;background:#f0f0ec;color:#171717;padding:22px 20px;box-shadow:22px 24px 45px #0008;transform:rotateY(-13deg) rotateZ(-4deg);display:flex;flex-direction:column;justify-content:space-between}
+    .book:after{content:"";position:absolute;top:4px;bottom:4px;right:-12px;width:12px;background:repeating-linear-gradient(90deg,#c8c8c2 0 1px,#e8e8e3 1px 3px);transform:skewY(0deg)}
+    .book-kicker{font-size:7px;letter-spacing:.2em;text-transform:uppercase;font-weight:700}
+    .book-title{font-family:"Manrope",sans-serif;font-weight:800;line-height:.93;letter-spacing:-.07em;font-size:34px}
+    .book-sub{font-size:9px;line-height:1.45;max-width:150px;color:#555}
+    .book-mark{width:34px;height:34px;border:1px solid #222;display:grid;place-items:center;font-family:Manrope;font-weight:800;font-size:14px}
+    .floating-note{position:absolute;z-index:2;background:#f7f7f5;padding:12px 15px;box-shadow:0 10px 35px #0002;font-size:10px;line-height:1.4}
+    .floating-note strong{display:block;font-family:Manrope;font-size:13px;margin-bottom:3px}
+    .note-one{left:8%;bottom:16%}.note-two{right:7%;top:15%;background:#292929;color:white}
+    .number{font-family:Manrope;font-weight:800;font-size:12px;color:#8b8b84}
+    .rule{border-top:1px solid var(--line)}
+    .dark-card{background:#1b1b1b;color:white}
+    .chapter-card{background:#202020;color:white;min-height:220px;padding:22px;display:flex;flex-direction:column;justify-content:space-between;transition:transform .25s,background .25s}
+    .chapter-card:hover{transform:translateY(-5px);background:#30302e}
+    .chapter-icon{width:40px;height:40px;border:1px solid #555;display:grid;place-items:center;color:#e9e9e5}
+    .chapter-card p{font-size:11px;color:#aaa;line-height:1.55}
+    .section-pad{padding-block:110px}
+    .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+    .faq details{border-top:1px solid var(--line);padding:20px 0}
+    .faq details:last-child{border-bottom:1px solid var(--line)}
+    .faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px;font-family:Manrope;font-weight:700;font-size:14px}
+    .faq summary::-webkit-details-marker{display:none}
+    .faq summary:after{content:"+";font-size:20px;font-weight:400;color:#777}
+    .faq details[open] summary:after{content:"−"}
+    .faq details p{max-width:680px;color:#6d6d68;font-size:13px;line-height:1.8;padding-top:14px}
+    .menu-panel{display:none}
+    .menu-panel.open{display:flex}
+    .tag{display:inline-flex;border:1px solid #d5d5cf;padding:7px 10px;font-size:10px;color:#5f5f59}
+    .offer-box{background:#fff;border:1px solid #deded9;padding:34px}
+    .offer-book{width:130px;height:178px;background:#eee;padding:15px;box-shadow:10px 12px 22px #0002;display:flex;flex-direction:column;justify-content:space-between}
+    .offer-book .book-title{font-size:21px}
+    .placeholder{color:#85857f;font-style:italic}
+    @media(max-width:800px){.wrap{width:min(100% - 32px,600px)}.section-pad{padding-block:76px}.hero-panel,.book-scene{min-height:360px}.book{width:185px;height:255px}.book-title{font-size:29px}.note-one{left:3%;bottom:10%}.note-two{right:3%;top:9%}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+  </style>
+</head>
+<body>
+  <header class="wrap relative z-20">
+    <nav class="flex items-center justify-between py-6 border-b border-[#deded9]" aria-label="Nawigacja główna">
+      <a href="#top" class="flex items-center gap-3 no-underline" aria-label="Matura bez stresu — strona główna">
+        <span class="w-8 h-8 border border-black grid place-items-center font-extrabold text-xs">M.</span>
+        <span class="font-bold text-xs tracking-tight leading-tight">MATURA<br>BEZ STRESU</span>
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a class="nav-link" href="#ebook">E-book</a><a class="nav-link" href="#zawartosc">Zawartość</a><a class="nav-link" href="#dla-kogo">Dla kogo</a><a class="nav-link" href="#faq">FAQ</a>
+      </div>
+      <a href="#oferta" class="hidden md:inline-flex btn">Zobacz ofertę <span aria-hidden="true">↗</span></a>
+      <button id="menuToggle" class="md:hidden border border-[#ccc] w-10 h-10 text-lg" aria-label="Otwórz menu" aria-expanded="false">☰</button>
+    </nav>
+    <div id="mobileMenu" class="menu-panel md:hidden flex-col gap-4 py-5 border-b border-[#deded9]">
+      <a class="nav-link" href="#ebook">E-book</a><a class="nav-link" href="#zawartosc">Zawartość</a><a class="nav-link" href="#dla-kogo">Dla kogo</a><a class="nav-link" href="#faq">FAQ</a><a class="btn w-full" href="#oferta">Zobacz ofertę ↗</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="wrap pt-12 md:pt-20 pb-20">
+      <div class="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+        <div class="reveal">
+          <p class="eyebrow mb-7">Praktyczny przewodnik · Plan działania · Planer</p>
+          <h1 class="display text-[42px] sm:text-6xl lg:text-[68px] leading-[.98] font-extrabold max-w-[620px]">Matura bez chaosu. Zacznij od dobrego planu.</h1>
+          <p class="mt-7 text-sm leading-7 text-[#666660] max-w-[470px]">Uporządkuj przygotowania, znajdź najważniejsze braki i zamień naukę w konkretne, wykonalne kroki — bez rozpisywania każdej minuty.</p>
+          <div class="flex flex-wrap items-center gap-4 mt-8">
+            <a class="btn" href="#oferta">Poznaj e-book <span aria-hidden="true">↗</span></a>
+            <a class="text-xs underline underline-offset-4" href="#zawartosc">Zobacz, co jest w środku</a>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-10"><span class="tag">33 strony w PDF</span><span class="tag">Format A4</span><span class="tag">Po polsku</span></div>
+        </div>
+        <div class="hero-panel reveal">
+          <div class="book-scene">
+            <div class="floating-note note-one"><strong>Najpierw diagnoza.</strong>Potem priorytety i plan.</div>
+            <div class="book" aria-label="Wizualizacja okładki e-booka Matura bez chaosu">
+              <div class="flex justify-between items-center"><span class="book-kicker">Poradnik i planer</span><span class="book-mark">M</span></div>
+              <div><div class="book-title">MATURA<br>BEZ<br>CHAOSU</div><p class="book-sub mt-4">Jak skutecznie zacząć naukę do matury</p></div>
+              <div class="book-kicker">Przewodnik · Plan działania · Zeszyt ćwiczeń</div>
+            </div>
+            <div class="floating-note note-two"><strong>Jeden krok naraz.</strong>Plan, który da się wykonać.</div>
+          </div>
+          <span class="absolute bottom-4 right-5 text-[9px] tracking-[.2em] text-[#888] uppercase">Wydanie · listopad 2026</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="rule section-pad">
+      <div class="wrap grid md:grid-cols-[.8fr_1.2fr] gap-12 items-start">
+        <div class="reveal"><p class="eyebrow mb-5">01 / Punkt wyjścia</p><h2 class="text-3xl md:text-4xl font-extrabold leading-tight">Dużo materiału.<br>Nie zawsze jasny<br>następny krok.</h2></div>
+        <div class="reveal">
+          <p class="text-sm text-[#696963] leading-7 max-w-2xl">Kiedy przedmiotów i tematów jest wiele, łatwo utknąć w czytaniu notatek, zbieraniu materiałów i tworzeniu planów, których trudno się trzymać. Samo spędzanie czasu nad książkami nie mówi jeszcze, co naprawdę umiesz.</p>
+          <div class="grid sm:grid-cols-2 gap-x-8 mt-9">
+            <div class="py-5 border-t border-[#deded9]"><span class="number">01</span><h3 class="font-bold mt-3 text-sm">„Nie wiem, od czego zacząć”</h3><p class="text-xs text-[#777] mt-2 leading-6">Zamiast zgadywać, sprawdź punkt startowy i wybierz trzy priorytety.</p></div>
+            <div class="py-5 border-t border-[#deded9]"><span class="number">02</span><h3 class="font-bold mt-3 text-sm">„Uczę się, ale czy umiem?”</h3><p class="text-xs text-[#777] mt-2 leading-6">Zamknij notatki i sprawdź, co potrafisz odtworzyć samodzielnie.</p></div>
+            <div class="py-5 border-t border-[#deded9]"><span class="number">03</span><h3 class="font-bold mt-3 text-sm">„Mój plan ciągle się sypie”</h3><p class="text-xs text-[#777] mt-2 leading-6">Zostaw bufor i korzystaj z procedury powrotu po przerwie.</p></div>
+            <div class="py-5 border-t border-[#deded9]"><span class="number">04</span><h3 class="font-bold mt-3 text-sm">„Arkusze nie pokazują mi, co poprawić”</h3><p class="text-xs text-[#777] mt-2 leading-6">Zapisuj przyczyny błędów i zamieniaj je w kolejne ćwiczenia.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ebook" class="section-pad bg-[#efefeb]">
+      <div class="wrap grid lg:grid-cols-2 gap-14 items-center">
+        <div class="reveal order-2 lg:order-1">
+          <div class="relative bg-[#1d1d1d] min-h-[360px] flex items-center justify-center overflow-hidden">
+            <div class="absolute w-64 h-64 border border-[#444] rounded-full"></div><div class="absolute w-80 h-80 border border-[#393939] rounded-full"></div>
+            <div class="offer-book relative z-10 rotate-[-5deg]">
+              <span class="text-[7px] tracking-[.2em] uppercase font-bold">Poradnik i planer</span><div class="book-title">MATURA<br>BEZ<br>CHAOSU</div><span class="text-[7px] leading-3">Jak skutecznie zacząć naukę do matury</span>
+            </div>
+          </div>
+          <p class="text-[9px] text-[#777] mt-3 tracking-wide">WIZUALIZACJA PRODUKTU · OKŁADKA ZGODNA Z TYTUŁEM PDF</p>
+        </div>
+        <div class="reveal order-1 lg:order-2">
+          <p class="eyebrow mb-5">02 / Rozwiązanie</p>
+          <h2 class="text-3xl md:text-5xl font-extrabold leading-[1.05]">Mniej zgadywania.<br>Więcej konkretnego działania.</h2>
+          <p class="text-sm text-[#666] leading-7 mt-7">„Matura bez chaosu” to praktyczny przewodnik, który prowadzi przez kolejne etapy przygotowań: od diagnozy i wyboru priorytetów, przez plan tygodnia i sesje nauki, aż po pracę z arkuszami i analizę błędów.</p>
+          <p class="text-sm text-[#666] leading-7 mt-4">Zamiast obiecywać konkretny wynik egzaminu, daje Ci uporządkowany sposób pracy oraz szablony, które możesz dopasować do własnych przedmiotów i czasu.</p>
+          <a href="#zawartosc" class="inline-block mt-7 text-xs font-bold underline underline-offset-4">Przejdź do zawartości ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="zawartosc" class="section-pad">
+      <div class="wrap">
+        <div class="grid md:grid-cols-[.75fr_1.25fr] gap-10 items-end mb-12">
+          <div class="reveal"><p class="eyebrow mb-5">03 / W środku</p><h2 class="text-3xl md:text-5xl font-extrabold leading-tight">Plan, który<br>prowadzi krok po kroku.</h2></div>
+          <p class="reveal text-sm leading-7 text-[#70706a] max-w-xl">Publikacja zawiera 14 rozdziałów oraz zestaw praktycznych kart i planerów. Możesz przechodzić przez nią po kolei albo wracać do konkretnego ćwiczenia, gdy tego potrzebujesz.</p>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+          <article class="chapter-card reveal"><div class="flex justify-between"><span class="number text-[#aaa]">01—03</span><span class="chapter-icon">⌕</span></div><div><h3 class="font-bold text-lg">Diagnoza i priorytety</h3><p class="mt-2">Sprawdź punkt startowy, nazwij braki i rozbij duże działy na konkretne umiejętności.</p></div></article>
+          <article class="chapter-card reveal"><div class="flex justify-between"><span class="number text-[#aaa]">04—06</span><span class="chapter-icon">▤</span></div><div><h3 class="font-bold text-lg">Plan i sesje nauki</h3><p class="mt-2">Ułóż realny tydzień, pracuj w blokach i wracaj do materiału w powtórkach.</p></div></article>
+          <article class="chapter-card reveal"><div class="flex justify-between"><span class="number text-[#aaa]">07—09</span><span class="chapter-icon">✎</span></div><div><h3 class="font-bold text-lg">Ćwiczenia i arkusze</h3><p class="mt-2">Dopasuj ćwiczenia do przedmiotu i wykorzystuj błędy jako wskazówki do poprawy.</p></div></article>
+          <article class="chapter-card reveal"><div class="flex justify-between"><span class="number text-[#aaa]">10—14</span><span class="chapter-icon">↗</span></div><div><h3 class="font-bold text-lg">Utrzymanie rytmu</h3><p class="mt-2">Ogranicz rozproszenia, wracaj do planu i przygotuj się do ostatnich tygodni.</p></div></article>
+        </div>
+        <div class="grid md:grid-cols-2 gap-8 mt-16 items-center">
+          <div class="reveal">
+            <p class="eyebrow mb-4">Narzędzia do wykorzystania</p><h3 class="text-2xl md:text-3xl font-extrabold">Nie tylko czytasz.<br>Wypełniasz i sprawdzasz.</h3>
+            <p class="text-sm text-[#70706a] leading-7 mt-5">W środku znajdziesz m.in. kartę diagnozy, szablon planu tygodnia, plan pojedynczej sesji, tabelę postępów, kartę analizy błędu, przegląd tygodnia i checklistę startową.</p>
+          </div>
+          <div class="grid grid-cols-2 gap-3 reveal">
+            <div class="border border-[#d8d8d2] bg-white p-5 min-h-40"><span class="eyebrow">KARTA 01</span><div class="mt-8 border-t border-[#ddd] pt-3 text-xs font-bold">Moje trzy priorytety</div><div class="h-1 bg-[#e5e5e0] mt-3"></div><div class="h-1 bg-[#e5e5e0] mt-2 w-4/5"></div></div>
+            <div class="border border-[#d8d8d2] bg-white p-5 min-h-40"><span class="eyebrow">KARTA 02</span><div class="mt-8 border-t border-[#ddd] pt-3 text-xs font-bold">Plan tygodnia</div><div class="grid grid-cols-4 gap-1 mt-3"><div class="h-8 bg-[#e5e5e0]"></div><div class="h-8 bg-[#e5e5e0]"></div><div class="h-8 bg-[#e5e5e0]"></div><div class="h-8 bg-[#e5e5e0]"></div></div></div>
+            <div class="border border-[#d8d8d2] bg-white p-5 min-h-40"><span class="eyebrow">KARTA 03</span><div class="mt-8 border-t border-[#ddd] pt-3 text-xs font-bold">Analiza błędu</div><div class="h-1 bg-[#e5e5e0] mt-3"></div><div class="h-1 bg-[#e5e5e0] mt-2 w-3/4"></div></div>
+            <div class="border border-[#d8d8d2] bg-white p-5 min-h-40"><span class="eyebrow">KARTA 04</span><div class="mt-8 border-t border-[#ddd] pt-3 text-xs font-bold">Checklista startowa</div><div class="space-y-2 mt-3"><div class="h-1 bg-[#e5e5e0]"></div><div class="h-1 bg-[#e5e5e0]"></div></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad bg-[#1b1b1b] text-white">
+      <div class="wrap grid lg:grid-cols-[.8fr_1.2fr] gap-14">
+        <div class="reveal"><p class="eyebrow text-[#aaa] mb-5">04 / Co zyskujesz</p><h2 class="text-3xl md:text-5xl font-extrabold leading-tight">Wiedzieć,<br>co zrobić dalej.</h2><p class="text-sm text-[#aaa] leading-7 mt-6 max-w-sm">Celem przewodnika jest uporządkowanie procesu nauki. Rezultaty zależą od Twojej sytuacji, przedmiotów i regularnej pracy.</p></div>
+        <div class="reveal">
+          <div class="grid sm:grid-cols-2 gap-x-10">
+            <div class="border-t border-[#454545] py-6"><span class="number">01</span><h3 class="font-bold mt-3">Jasny punkt startowy</h3><p class="text-xs text-[#aaa] mt-2 leading-6">Wiesz, które obszary już opanowałeś, a które warto przećwiczyć.</p></div>
+            <div class="border-t border-[#454545] py-6"><span class="number">02</span><h3 class="font-bold mt-3">Realny plan tygodnia</h3><p class="text-xs text-[#aaa] mt-2 leading-6">Planujesz bloki i konkretne rezultaty, zostawiając miejsce na życie.</p></div>
+            <div class="border-t border-[#454545] py-6"><span class="number">03</span><h3 class="font-bold mt-3">Skuteczniejsza sesja</h3><p class="text-xs text-[#aaa] mt-2 leading-6">Łączysz przypominanie, samodzielną próbę i sprawdzenie efektu.</p></div>
+            <div class="border-t border-[#454545] py-6"><span class="number">04</span><h3 class="font-bold mt-3">Wnioski z błędów</h3><p class="text-xs text-[#aaa] mt-2 leading-6">Zamieniasz pomyłki w konkretne zadania naprawcze.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="dla-kogo" class="section-pad">
+      <div class="wrap grid lg:grid-cols-2 gap-14 items-center">
+        <div class="reveal">
+          <p class="eyebrow mb-5">05 / Dla kogo</p><h2 class="text-3xl md:text-5xl font-extrabold leading-tight">Dla osób, które chcą przygotowywać się z większym porządkiem.</h2>
+          <p class="text-sm text-[#70706a] leading-7 mt-6">Przewodnik może być pomocny, jeśli masz kilka przedmiotów do ogarnięcia, nie wiesz, jak ustalać priorytety albo chcesz wyciągać więcej z rozwiązywania arkuszy.</p>
+        </div>
+        <div class="reveal border border-[#d8d8d2] p-7 md:p-10">
+          <div class="flex gap-4 py-4 border-b border-[#deded9]"><span class="text-lg">↗</span><p class="text-sm">Dla maturzystów, którzy potrzebują uporządkować materiał i kolejne kroki.</p></div>
+          <div class="flex gap-4 py-4 border-b border-[#deded9]"><span class="text-lg">↗</span><p class="text-sm">Dla osób, które uczą się dużo, ale rzadko sprawdzają wiedzę bez notatek.</p></div>
+          <div class="flex gap-4 py-4 border-b border-[#deded9]"><span class="text-lg">↗</span><p class="text-sm">Dla tych, którym trudno utrzymać plan po opuszczonym dniu.</p></div>
+          <div class="flex gap-4 py-4"><span class="text-lg">↗</span><p class="text-sm">Dla uczniów, którzy chcą analizować błędy zamiast tylko robić kolejne arkusze.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="oferta" class="section-pad bg-[#efefeb]">
+      <div class="wrap">
+        <div class="text-center max-w-xl mx-auto mb-12 reveal"><p class="eyebrow mb-5">06 / Oferta</p><h2 class="text-3xl md:text-5xl font-extrabold">Zacznij od uporządkowania nauki.</h2><p class="text-sm text-[#70706a] leading-7 mt-5">Jeden przewodnik. Konkretne narzędzia. Plan dopasowany do Twojej sytuacji.</p></div>
+        <div class="offer-box max-w-3xl mx-auto reveal">
+          <div class="flex flex-col sm:flex-row gap-8 items-start">
+            <div class="bg-[#1b1b1b] p-8 flex-1 w-full flex justify-center min-h-[260px] items-center">
+              <div class="offer-book rotate-[-5deg]"><span class="text-[7px] tracking-[.2em] uppercase font-bold">Poradnik i planer</span><div class="book-title">MATURA<br>BEZ<br>CHAOSU</div><span class="text-[7px] leading-3">Jak skutecznie zacząć naukę do matury</span></div>
+            </div>
+            <div class="flex-[1.1]">
+              <p class="eyebrow">Produkt cyfrowy · PDF</p><h3 class="text-2xl font-extrabold mt-3">Matura bez chaosu</h3>
+              <p class="text-xs text-[#777] leading-6 mt-3">Praktyczny przewodnik, plan działania i zeszyt ćwiczeń do samodzielnego wykorzystania.</p>
+              <div class="rule my-6"></div>
+              <ul class="space-y-3 text-xs text-[#555]">
+                <li>✓ 33 strony w formacie A4</li><li>✓ 14 rozdziałów tematycznych</li><li>✓ Karty diagnozy, planery i checklisty</li><li>✓ Język polski, plik PDF</li>
+              </ul>
+              <div class="rule my-6"></div>
+              <p class="text-[10px] uppercase tracking-[.15em] text-[#777]">Cena</p><p class="text-2xl font-extrabold mt-1 placeholder">Do uzupełnienia</p>
+              <button id="buyButton" class="btn w-full mt-5 opacity-50 cursor-not-allowed" disabled aria-disabled="true">Link do zakupu nie został jeszcze dodany</button>
+              <p class="text-[10px] text-[#888] leading-5 mt-3">Sprzedaż i automatyczna dostawa PDF wymagają podłączenia platformy płatności. Przycisk zostanie aktywowany po dodaniu prawdziwego linku do checkoutu.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section-pad">
+      <div class="wrap grid lg:grid-cols-[.7fr_1.3fr] gap-14">
+        <div class="reveal"><p class="eyebrow mb-5">07 / FAQ</p><h2 class="text-3xl md:text-5xl font-extrabold">Masz pytania?</h2><p class="text-sm text-[#70706a] mt-5 leading-7">Kilka informacji o samym pliku i jego zawartości.</p></div>
+        <div class="faq reveal">
+          <details><summary>W jakim formacie jest e-book?</summary><p>Publikacja jest przygotowana jako dokument PDF w formacie A4.</p></details>
+          <details><summary>Ile stron ma publikacja?</summary><p>Plik zawiera 33 strony, w tym 14 rozdziałów, ćwiczenia, karty pracy i checklistę startową.</p></details>
+          <details><summary>Czy mogę otworzyć PDF na telefonie?</summary><p>Tak. PDF można otworzyć w standardowej przeglądarce dokumentów na telefonie, tablecie lub komputerze.</p></details>
+          <details><summary>Czy potrzebuję specjalnego programu?</summary><p>Nie. Wystarczy dowolna aplikacja obsługująca pliki PDF.</p></details>
+          <details><summary>Jak otrzymam plik po zakupie?</summary><p class="placeholder">Sposób dostarczenia zostanie opisany po skonfigurowaniu platformy sprzedażowej i płatności.</p></details>
+          <details><summary>Czy e-book gwarantuje określony wynik na maturze?</summary><p>Nie. To praktyczny przewodnik organizujący naukę. Wynik egzaminu zależy od wielu czynników, w tym punktu startowego, zakresu przedmiotów i pracy ucznia.</p></details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-[#1b1b1b] text-white pt-14 pb-8">
+    <div class="wrap">
+      <div class="grid md:grid-cols-2 gap-10 pb-12">
+        <div><div class="flex items-center gap-3"><span class="w-8 h-8 border border-white grid place-items-center font-extrabold text-xs">M.</span><span class="font-bold text-xs tracking-tight">MATURA<br>BEZ STRESU</span></div><h2 class="text-3xl md:text-4xl font-extrabold mt-8 max-w-md">Mniej chaosu. Więcej jasnych kroków.</h2></div>
+        <div class="md:justify-self-end md:w-full md:max-w-xs"><p class="eyebrow text-[#aaa] mb-5">Informacje</p><p class="text-xs text-[#aaa] leading-6">Dane sprzedawcy, adres kontaktowy, regulamin, polityka prywatności oraz informacje o prawach konsumenta wymagają uzupełnienia przed uruchomieniem sprzedaży.</p><div class="mt-6 space-y-2 text-xs text-[#777]"><p>Sprzedawca: <span class="placeholder">do uzupełnienia</span></p><p>Kontakt: <span class="placeholder">do uzupełnienia</span></p><p><a href="#" class="underline underline-offset-4" aria-label="Regulamin — link do uzupełnienia">Regulamin — do dodania</a></p><p><a href="#" class="underline underline-offset-4" aria-label="Polityka prywatności — link do uzupełnienia">Polityka prywatności — do dodania</a></p></div></div>
+      </div>
+      <div class="border-t border-[#444] pt-6 flex flex-col sm:flex-row gap-3 justify-between text-[10px] text-[#777]"><span>© <span id="year"></span> Matura bez stresu</span><span>Przewodnik edukacyjny · Wersja demonstracyjna strony</span><a href="#top" class="underline underline-offset-4">Wróć na górę ↑</a></div>
+    </div>
+  </footer>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+    menuToggle.addEventListener("click", () => {
+      const open = mobileMenu.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", String(open));
+      menuToggle.textContent = open ? "×" : "☰";
+    });
+    mobileMenu.querySelectorAll("a").forEach(link => link.addEventListener("click", () => {
+      mobileMenu.classList.remove("open");
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.textContent = "☰";
+    }));
+    if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {threshold: 0.12});
+      document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+    } else {
+      document.querySelectorAll(".reveal").forEach(el => el.classList.add("visible"));
+    }
+  </script>
+</body>
+</html>
